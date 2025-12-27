@@ -1,0 +1,117 @@
+.header {
+  position: sticky;
+  top: 1rem;
+  z-index: 200;
+  padding: 0.5rem 0 1.25rem;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.75rem clamp(1rem, 3vw, 2rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(246, 247, 252, 0.78));
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 35px rgba(15, 23, 42, 0.2);
+  backdrop-filter: blur(24px);
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 1.35rem;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  color: var(--ink-strong);
+  transition: transform 0.3s ease;
+}
+
+.logo svg {
+  color: var(--accent);
+}
+
+.logo:hover {
+  transform: translateY(-2px);
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.95rem;
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--ink-muted);
+  transition: all 0.25s ease;
+}
+
+.nav-link:nth-child(1) {
+  color: var(--ink);
+}
+
+.nav-link:hover {
+  color: var(--ink-strong);
+  background: rgba(15, 23, 42, 0.06);
+}
+
+.nav-link--active {
+  color: var(--ink-strong);
+  background: rgba(15, 23, 42, 0.12);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+}
+
+.add-recipe-btn {
+  background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+  color: #0b0f1c;
+  font-weight: 600;
+  box-shadow: 0 10px 25px rgba(255, 111, 60, 0.35);
+}
+
+.add-recipe-btn:hover {
+  transform: translateY(-1px);
+}
+
+.profile-btn {
+  border: 1px solid rgba(15, 23, 42, 0.2);
+  background: transparent;
+  color: var(--ink-muted);
+}
+
+.profile-btn:hover {
+  color: var(--ink);
+  border-color: var(--accent);
+}
+
+@media (max-width: 930px) {
+  .header-container {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .nav-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .logo span {
+    display: none;
+  }
+
+  .nav-link span {
+    display: none;
+  }
+}
